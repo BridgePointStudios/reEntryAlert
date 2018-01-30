@@ -5,14 +5,44 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>settings</ion-title>
+    <ion-title>
+      Select Your Notification Level
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding  >
+ 
+  <form (submit)="doSubmit($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="langs">
 
-<ion-content padding>
+      <ion-list-header>
+        Frequency
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>All</ion-label>
+        <ion-radio value="notificationsAll" checked="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Daily</ion-label>
+        <ion-radio value="notificationsDaily"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Re-Entry Emminent</ion-label>
+        <ion-radio value="notificationsEmminent"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Re-Entry Only</ion-label>
+        <ion-radio value="notificationsReEntryOnly"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>None</ion-label>
+        <ion-radio value="notificationsNone"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button ion-button round>Submit</button>
+  </form>
 
 </ion-content>

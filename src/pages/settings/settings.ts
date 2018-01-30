@@ -1,25 +1,27 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {
+  FormGroup,
+  FormControl
 
-@IonicPage()
+} from '@angular/forms';
+
+
 @Component({
-  selector: 'page-settings',
-  templateUrl: 'settings.html',
+  templateUrl: 'settings.html'
 })
 export class SettingsPage {
+  langs;
+  langForm;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor() {
+    this.langForm = new FormGroup({
+      "langs": new FormControl({value: 'rust', disabled: false})
+    });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
+  doSubmit(event) {
+    console.log('Submitting form', this.langForm.value);
+    event.preventDefault();
   }
-
 }
