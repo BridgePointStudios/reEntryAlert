@@ -16,7 +16,7 @@ export class SettingsPage {
 
   constructor() {
     this.langForm = new FormGroup({
-      "langs": new FormControl({value: 'rust', disabled: false})
+      "langs": new FormControl({value: 'notificationsAll', disabled: false})
     });
   }
 
