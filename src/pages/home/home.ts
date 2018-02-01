@@ -8,11 +8,10 @@ import { StatusProvider } from '../../providers/status/status';
   templateUrl: 'home.html'
 })
 export class HomePage {
+newStatus:string;
 
   constructor(public navCtrl: NavController, private statusProvider:StatusProvider) {
-    console.log('Home Component');
-    let newStatus = statusProvider.status;
-    return newStatus;
+       
   }
-
 }
+

@@ -1,8 +1,8 @@
 {
   "name": "reEntryAlert",
-  "app_id": "7091465e",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "app_id": "7091465e"
 }
