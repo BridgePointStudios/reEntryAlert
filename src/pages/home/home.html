@@ -4,30 +4,74 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="green">
     <ion-card>
-  
       <ion-card-content>
         <ion-card-title>
           <ion-icon name="thumbs-up" style="color: green;"></ion-icon>
-          No Emergency Yet {{statusProvider.status}}
+          No Emergency Yet. Code {{statusProvider.status}}
         </ion-card-title>
         <p>
           Tiangong-1 is out of control, but not yet re-entering the atmosphere.      
         </p>
       </ion-card-content>
-  
       <ion-item>
         <ion-icon name='link' item-start style="color: #d03e84"></ion-icon>
         Get Links
         <ion-badge item-end>#</ion-badge>
       </ion-item>
-  
       <ion-item>
         <ion-icon name='notifications' item-start style="color: #55acee"></ion-icon>
         Setup Notifications
         <ion-badge item-end>#</ion-badge>
       </ion-item>
-  
     </ion-card>
+</ion-content>
+
+<ion-content *ngIf="yellow">
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <ion-icon name="thumbs-down" style="color: yellow;"></ion-icon>
+        ReEntry Emminent. Code {{statusProvider.status}}
+      </ion-card-title>
+      <p>
+        Tiangong-1 will be making re-entry within hours. Location tbd.      
+      </p>
+    </ion-card-content>
+    <ion-item>
+      <ion-icon name='link' item-start style="color: #d03e84"></ion-icon>
+      Get Links
+      <ion-badge item-end>#</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-icon name='notifications' item-start style="color: #55acee"></ion-icon>
+      Setup Notifications
+      <ion-badge item-end>#</ion-badge>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="red">
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <ion-icon name="warning" style="color: red;"></ion-icon>
+        Emergency Warning. Code {{statusProvider.status}}
+      </ion-card-title>
+      <p>
+        Tiangong-1 is making re-entry now. Expected Impact Location [[location]].
+      </p>
+    </ion-card-content>
+    <ion-item>
+      <ion-icon name='link' item-start style="color: #d03e84"></ion-icon>
+      Get Links
+      <ion-badge item-end>#</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-icon name='notifications' item-start style="color: #55acee"></ion-icon>
+      Setup Notifications
+      <ion-badge item-end>#</ion-badge>
+    </ion-item>
+  </ion-card>
+</ion-content>
