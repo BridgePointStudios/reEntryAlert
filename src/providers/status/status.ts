@@ -13,6 +13,6 @@ export class StatusProvider {
   constructor() 
   {
     console.log('Hello StatusProvider Provider');
-    this.status = "Yellow";
+    this.status = "Red";
   }
 }

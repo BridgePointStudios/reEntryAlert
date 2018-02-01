@@ -8,30 +8,31 @@ import { StatusProvider } from '../../providers/status/status';
   templateUrl: 'home.html'
 })
 export class HomePage {
-green:boolean = false;
-yellow: boolean = true;
+green: boolean = false;
+yellow: boolean = false;
 red: boolean = false;
 
   constructor(public navCtrl: NavController, private statusProvider:StatusProvider) {
-    let newStatus = statusProvider.status;
-       switch(newStatus) {
+    let currentStatus = statusProvider.status;
+       switch(currentStatus) {
         case "Green":
-          let green = true;
+          this.green = true;
+          this.yellow = false;
           break;
         case "Yellow":
-          let yellow = true;
+          this.yellow = true;
           break;
         case "Red":
-          let red = true;
+          this.red = true;
           break;
         default: 
-          let green = true;
+          console.log('default');
        }
        
-console.log('green: ' + green);
-console.log('yellow: ' + yellow);
-console.log('red: ' + red);
-console.log('newStatus: ' + newStatus);
+console.log('green: ' + this.green);
+console.log('yellow: ' + this.yellow);
+console.log('red: ' + this.red);
+console.log('currentStatus: ' + currentStatus);
   }
 }
 
